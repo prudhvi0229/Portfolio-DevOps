@@ -1,0 +1,117 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Mail, Linkedin, Github } from "lucide-react";
+import { motion } from "framer-motion";
+
+export default function Portfolio() {
+  return (
+    <main className="p-6 max-w-5xl mx-auto space-y-12">
+      {/* Header */}
+      <motion.section 
+        className="text-center"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="text-4xl font-bold">Prudhvi Raj Mandapelli</h1>
+        <p className="text-lg text-gray-600">Senior DevOps / Cloud Engineer</p>
+        <div className="flex justify-center gap-4 mt-4">
+          <a href="mailto:your-email@example.com"><Mail /></a>
+          <a href="https://linkedin.com/in/yourprofile"><Linkedin /></a>
+          <a href="https://github.com/yourusername"><Github /></a>
+        </div>
+      </motion.section>
+
+      {/* Summary */}
+      <motion.section 
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-2xl font-semibold mb-2">About Me</h2>
+        <p className="text-gray-700">
+          DevOps/Cloud Engineer with over 7 years of experience working with top companies
+          including Wells Fargo, Mercury General Corporation, Pfizer, and Stryker. Specialized in cloud infrastructure,
+          CI/CD, and automation. Passionate about delivering scalable and secure systems.
+        </p>
+      </motion.section>
+
+      {/* Skills */}
+      <motion.section
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-2xl font-semibold mb-2">Skills</h2>
+        <ul className="grid grid-cols-2 gap-2 text-gray-700">
+          <li>AWS, Azure, GCP</li>
+          <li>Kubernetes, Docker</li>
+          <li>Terraform, CloudFormation</li>
+          <li>Git, GitHub Actions, Jenkins</li>
+          <li>Ansible, Chef</li>
+          <li>Linux, Bash, Python</li>
+        </ul>
+      </motion.section>
+
+      {/* Experience */}
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-2xl font-semibold mb-2">Experience</h2>
+        <Card>
+          <CardContent className="p-4">
+            <h3 className="text-xl font-bold">Stryker Corporation</h3>
+            <p className="text-sm text-gray-500">DevOps Engineer | 2022 - 2024</p>
+            <p className="text-gray-700 mt-2">
+              Led CI/CD automation and cloud migration strategies. Improved deployment speed by 40%.
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4">
+            <h3 className="text-xl font-bold">Pfizer</h3>
+            <p className="text-sm text-gray-500">Cloud Engineer | 2020 - 2022</p>
+            <p className="text-gray-700 mt-2">
+              Designed and deployed secure, scalable cloud environments on AWS. Automated infrastructure provisioning.
+            </p>
+          </CardContent>
+        </Card>
+      </motion.section>
+
+      {/* Projects */}
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-2xl font-semibold mb-2">Projects</h2>
+        <ul className="list-disc list-inside text-gray-700">
+          <li>CI/CD Pipeline Automation for Stryker using Jenkins and GitHub Actions</li>
+          <li>Multi-Cloud Infrastructure Setup with Terraform</li>
+          <li>Monitoring System with Prometheus and Grafana</li>
+        </ul>
+      </motion.section>
+
+      {/* Contact */}
+      <motion.section
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-2xl font-semibold mb-2">Contact</h2>
+        <p className="text-gray-700">Email: your-email@example.com</p>
+        <p className="text-gray-700">LinkedIn: linkedin.com/in/yourprofile</p>
+        <p className="text-gray-700">GitHub: github.com/yourusername</p>
+        <Button className="mt-4">Download Resume</Button>
+      </motion.section>
+    </main>
+  );
+}
